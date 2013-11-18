@@ -20,4 +20,23 @@ describe("Writing Markdown", function() {
     assert.equal(md[0], "### `foo`");
     assert.equal(md[1], "**Returns:** something else");
   });
+
+  it("can deal with parameters", function() {
+    var contents = [
+      "/*DOC",
+      " * @name foo",
+      " * @param x description of x",
+      " * @param y description of y",
+      " * @returns something else",
+      " */",
+      "var foo = function() {}"
+    ].join("\n");
+    var res = parseFile.parse(contents);
+    var md = writeMarkdown.parse(res)[0];
+    assert.equal(md[1], "Parameters:");
+    var params = md[2].split("\n\n");
+    assert.equal(params[0], "- `x`: description of x");
+    assert.equal(params[1], "- `y`: description of y");
+
+  });
 });

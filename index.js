@@ -14,7 +14,7 @@ var doccy = {
   writeToFile: function(markdown, output) {
     var toWrite = [];
     markdown.forEach(function(block) {
-      toWrite.push(block.join("\n"));
+      toWrite.push(block.join("\n\n"));
     });
     var contents = toWrite.join("\n\n");
     fs.writeFile(output, contents, function(err) {
