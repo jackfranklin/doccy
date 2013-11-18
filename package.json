@@ -1,0 +1,24 @@
+{
+  "name": "doccy",
+  "version": "0.0.0",
+  "description": "Generate Markdown documentation",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jackfranklin/doccy.git"
+  },
+  "author": "Jack Franklin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackfranklin/doccy/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0"
+  }
+}
