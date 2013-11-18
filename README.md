@@ -57,6 +57,6 @@ Order is not important.
 ### TODO
 
 - allow options for changing Markdown formatting
-- make CLI tool take a glob or directory
+- make CLI tool take a glob or directory, and output a new MD file for each JS file it finds
 - add more keys
 
