@@ -51,7 +51,7 @@ Order is not important.
 
 - `@name {function name}`
 - `@description {function description}`
-- `@param {name} {description}
+- `@param {name} {description}`
 - `@returns {description}`
 
 ### TODO
