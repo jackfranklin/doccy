@@ -6,7 +6,8 @@ describe("Writing Markdown", function() {
   var result;
   before(function() {
     var contents = [
-      "/*DOC",
+      "/*",
+      " * @description blah blah blah",
       " * @name foo",
       " * @returns something else",
       " */",
@@ -18,12 +19,13 @@ describe("Writing Markdown", function() {
   it("generates the right Markdown", function() {
     var md = writeMarkdown.parse(result)[0];
     assert.equal(md[0], "### `foo`");
-    assert.equal(md[1], "**Returns:** something else");
+    assert.equal(md[1], "_blah blah blah_");
+    assert.equal(md[2], "**Returns:** something else");
   });
 
   it("can deal with parameters", function() {
     var contents = [
-      "/*DOC",
+      "/*",
       " * @name foo",
       " * @param x description of x",
       " * @param y description of y",
@@ -37,6 +39,5 @@ describe("Writing Markdown", function() {
     var params = md[2].split("\n\n");
     assert.equal(params[0], "- `x`: description of x");
     assert.equal(params[1], "- `y`: description of y");
-
   });
 });

@@ -7,7 +7,7 @@ describe("Parse File", function() {
   });
   it("can parse a function name comment", function() {
     var contents = [
-      "/*DOC",
+      "/*",
       " * @name foo",
       " * @returns something else",
       " */",
@@ -18,9 +18,21 @@ describe("Parse File", function() {
     assert.equal(res.blocks[0].returns, "something else");
   });
 
+  it("can parse description", function() {
+    var contents = [
+      "/*",
+      " * @description a cool method",
+      " * @name foo",
+      " */",
+      "var foo = function() {}"
+    ].join("\n");
+    var res = parseFile.parse(contents);
+    assert.equal(res.blocks[0].description, "a cool method");
+  });
+
   it("can parse parameters", function() {
     var contents = [
-      "/*DOC",
+      "/*",
       " * @name foo",
       " * @param x description of x",
       " * @param y description of y",
@@ -34,13 +46,13 @@ describe("Parse File", function() {
   });
   it("can parse multiple functions", function() {
     var contents = [
-      "/*DOC",
+      "/*",
       " * @name foo",
       " * @returns something else",
       " */",
       "var foo = function() {}",
       "",
-      "/*DOC",
+      "/*",
       " * @name bar",
       " */",
       "var bar = function() {}"

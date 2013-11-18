@@ -3,7 +3,9 @@ var writeMarkdown = {
     var markdown = [];
     result.blocks.forEach(function(block) {
       var blockMarkdown = [];
-      blockMarkdown.push("### `" + block.name + "`");
+      if(block.name) blockMarkdown.push("### `" + block.name + "`");
+      if(block.description) blockMarkdown.push("_" + block.description + "_");
+
       if(Object.keys(block.params).length > 0) {
         blockMarkdown.push("Parameters:");
         var paramsMarkdown = [];
@@ -12,7 +14,7 @@ var writeMarkdown = {
         }
         blockMarkdown.push(paramsMarkdown.join("\n\n"));
       }
-      blockMarkdown.push("**Returns:** " + block.returns);
+      if(block.returns) blockMarkdown.push("**Returns:** " + block.returns);
 
       markdown.push(blockMarkdown);
     }.bind(this));

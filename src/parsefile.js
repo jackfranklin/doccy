@@ -8,7 +8,8 @@ FunctionBlock.prototype = {
     this.lines.push(line);
     this.checkNameMatch(line) ||
     this.checkReturnMatch(line) ||
-    this.checkParamsMatch(line);
+    this.checkParamsMatch(line) ||
+    this.checkDescriptionMatch(line);
   },
   checkNameMatch: function(line) {
     var match = /@name ([A-z0-9_]*)/i.exec(line);
@@ -33,6 +34,14 @@ FunctionBlock.prototype = {
       return true;
     }
     return false;
+  },
+  checkDescriptionMatch: function(line) {
+    var match = /@description (.+)/i.exec(line);
+    if(match) {
+      this.description = match[1];
+      return true;
+    }
+    return false;
   }
 };
 
@@ -43,7 +52,7 @@ var parseFile = {
     var functionBlock;
     fileContents.split("\n").forEach(function(item) {
       var line = item.trim();
-      if(line == "/*DOC") {
+      if(line == "/*") {
         functionBlock = new FunctionBlock();
       };
       if(line == "*/" && functionBlock != undefined) {
