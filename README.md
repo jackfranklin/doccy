@@ -61,4 +61,5 @@ Order is not important.
 - add more keys
 - make a Grunt plugin
 - document programmatical usage
+- better support for documenting an object and the methods within
 
