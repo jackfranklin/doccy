@@ -23,6 +23,22 @@ describe("Writing Markdown", function() {
     assert.equal(md[2], "**Returns:** something else");
   });
 
+  it("outputs bigger headings for containers", function() {
+    var contents = [
+      "/*",
+      " * @object foo",
+      " */",
+      "",
+      "/*",
+      " * @name bar",
+      " */"
+    ].join("\n");
+    var res = parseFile.parse(contents);
+    var md = writeMarkdown.parse(res);
+    assert.equal(md[0][0], "## `foo`");
+    assert.equal(md[1][0], "### `bar`");
+  });
+
   it("can deal with parameters", function() {
     var contents = [
       "/*",

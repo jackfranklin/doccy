@@ -65,3 +65,14 @@ Order is not important.
 - document programmatical usage
 - better support for documenting an object and the methods within
 
+### Changelog
+
+__0.0.3__
+- added `object` key for denoting a "containing" object
+
+__0.0.2__
+- added `description` key
+
+__0.0.1__
+- initial release
+

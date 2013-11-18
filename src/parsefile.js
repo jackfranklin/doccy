@@ -6,10 +6,19 @@ var FunctionBlock = function() {
 FunctionBlock.prototype = {
   addLine: function(line) {
     this.lines.push(line);
+    this.checkContainerMatch(line) ||
     this.checkNameMatch(line) ||
     this.checkReturnMatch(line) ||
     this.checkParamsMatch(line) ||
     this.checkDescriptionMatch(line);
+  },
+  checkContainerMatch: function(line) {
+    var match = /@object ([A-z0-9_]*)/i.exec(line);
+    if(match) {
+      this.isContainer = true;
+      this.name = "foo"
+    }
+    return false;
   },
   checkNameMatch: function(line) {
     var match = /@name ([A-z0-9_]*)/i.exec(line);

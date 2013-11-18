@@ -44,6 +44,24 @@ describe("Parse File", function() {
     assert.equal(res.blocks[0].params.x, "description of x");
     assert.equal(res.blocks[0].params.y, "description of y");
   });
+
+  it("can parse object docs", function() {
+    var contents = [
+      "/*",
+      " * @object foo",
+      " */",
+      "",
+      "/*",
+      " * @name bar",
+      " */"
+    ].join("\n");
+    var res = parseFile.parse(contents);
+    assert(res.blocks[0].isContainer);
+    assert.equal(res.blocks[0].name, "foo");
+    assert.equal(res.blocks[1].name, "bar");
+  });
+
+
   it("can parse multiple functions", function() {
     var contents = [
       "/*",

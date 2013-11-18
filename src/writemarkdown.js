@@ -12,7 +12,8 @@ var writeMarkdown = {
     var markdown = [];
     result.blocks.forEach(function(block) {
       var blockMarkdown = [];
-      if(block.name) blockMarkdown.push("### `" + block.name + "`");
+      var headingLevel = block.isContainer ? "##" : "###";
+      if(block.name) blockMarkdown.push(headingLevel + " `" + block.name + "`");
       if(block.description) blockMarkdown.push("_" + block.description + "_");
 
       if(Object.keys(block.params).length > 0) {
