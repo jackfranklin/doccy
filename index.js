@@ -2,6 +2,10 @@ var parseFile = require("./src/parsefile.js");
 var writeMarkdown = require("./src/writemarkdown.js");
 var fs = require("fs");
 
+/*
+ * @object doccy
+ * @description the doccy module
+ */
 var doccy = {
   /*
    * @name init

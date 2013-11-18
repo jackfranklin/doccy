@@ -1,3 +1,7 @@
+## `doccy`
+
+_the doccy module_
+
 ### `init`
 
 Parameters:

@@ -16,7 +16,7 @@ FunctionBlock.prototype = {
     var match = /@object ([A-z0-9_]*)/i.exec(line);
     if(match) {
       this.isContainer = true;
-      this.name = "foo"
+      this.name = match[1];
     }
     return false;
   },
@@ -55,7 +55,7 @@ FunctionBlock.prototype = {
 };
 
 /*
- * @name parseFile
+ * @object parseFile
  * @description parseFile module
  */
 var parseFile = {

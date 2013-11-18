@@ -1,4 +1,4 @@
-### `parseFile`
+## `parseFile`
 
 _parseFile module_
 

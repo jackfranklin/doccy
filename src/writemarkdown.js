@@ -1,5 +1,5 @@
 /*
- * @name writeMarkdown
+ * @object writeMarkdown
  * @description writeMarkdown module
  */
 var writeMarkdown = {

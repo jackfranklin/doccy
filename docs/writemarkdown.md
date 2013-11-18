@@ -1,4 +1,4 @@
-### `writeMarkdown`
+## `writeMarkdown`
 
 _writeMarkdown module_
 
