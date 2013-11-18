@@ -45,8 +45,18 @@ FunctionBlock.prototype = {
   }
 };
 
+/*
+ * @name parseFile
+ * @description parseFile module
+ */
 var parseFile = {
   blocks: [],
+  /*
+   * @name parse
+   * @description takes string of contents and parses out the doc strings
+   * @param fileContents string contents
+   * @returns a parsed object of functions
+   */
   parse: function(fileContents) {
     this.blocks = [];
     var functionBlock;

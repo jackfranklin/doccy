@@ -11,6 +11,8 @@ Automatic generation of documentation READMEs.
 
 ### Example
 
+You can see a full example of generated documentation in the `docs` folder.
+
 Given a test file:
 
 ```

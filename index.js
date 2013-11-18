@@ -3,6 +3,11 @@ var writeMarkdown = require("./src/writemarkdown.js");
 var fs = require("fs");
 
 var doccy = {
+  /*
+   * @name init
+   * @param filename the src file to read for docstrings
+   * @param output the file name to output markdown into
+   */
   init: function(filename, output) {
     fs.readFile(filename, "utf8", function(err, contents) {
       if(err) console.log(err);
@@ -11,6 +16,11 @@ var doccy = {
       this.writeToFile(markdown, output);
     }.bind(this));
   },
+  /*
+   * @name writeToFile
+   * @param markdown the result of calling writeMarkdown.parse
+   * @param output the filename to output to
+   */
   writeToFile: function(markdown, output) {
     var toWrite = [];
     markdown.forEach(function(block) {

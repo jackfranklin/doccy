@@ -1,4 +1,13 @@
+/*
+ * @name writeMarkdown
+ * @description writeMarkdown module
+ */
 var writeMarkdown = {
+  /*
+   * @name parse
+   * @param result the result of calling parseFile.parse(contents)
+   * @returns an array of lines of markdown
+   */
   parse: function(result) {
     var markdown = [];
     result.blocks.forEach(function(block) {
