@@ -53,12 +53,15 @@ Order is not important.
 
 - `@name {function name}`
 - `@description {function description}`
-- `@param {name} {description}
+- `@param {name} {description}`
 - `@returns {description}`
 
 ### TODO
 
 - allow options for changing Markdown formatting
-- make CLI tool take a glob or directory
+- make CLI tool take a glob or directory, and output a new MD file for each JS file it finds
 - add more keys
+- make a Grunt plugin
+- document programmatical usage
+- better support for documenting an object and the methods within
 
