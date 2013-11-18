@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var doccy = require("../index.js");
 
 var filename = process.argv[2];
