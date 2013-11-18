@@ -1,5 +1,10 @@
 ## Doccy
 
+```
+$ npm install -g doccy
+```
+
+
 Automatic generation of documentation READMEs.
 
 ### Example
