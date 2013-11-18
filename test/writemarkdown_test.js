@@ -18,6 +18,6 @@ describe("Writing Markdown", function() {
   it("generates the right Markdown", function() {
     var md = writeMarkdown.parse(result)[0];
     assert.equal(md[0], "### `foo`");
-    assert.equal(md[1], "**Returns: ** something else");
+    assert.equal(md[1], "**Returns:** something else");
   });
 });

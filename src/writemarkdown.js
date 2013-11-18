@@ -4,7 +4,7 @@ var writeMarkdown = {
     result.blocks.forEach(function(block) {
       var blockMarkdown = [];
       blockMarkdown.push("### `" + block.name + "`");
-      blockMarkdown.push("**Returns: ** " + block.returns);
+      blockMarkdown.push("**Returns:** " + block.returns);
 
       markdown.push(blockMarkdown);
     }.bind(this));
