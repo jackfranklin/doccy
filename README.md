@@ -16,15 +16,22 @@ You can see a full example of generated documentation in the `docs` folder.
 Given a test file:
 
 ```
+
 /*
- * @name foo
- * @description a cool function
- * @param x does something
- * @returns a number
+ * @object thing
+ * @description a module of things
  */
-var foo = function(x) {
-    return 42;
-};
+var thing = {
+    /*
+     * @name foo
+     * @description a cool function
+     * @param x does something
+     * @returns a number
+     */
+    foo: function(x) {
+        return 42;
+    }
+}
 ```
 
 Running:
@@ -36,6 +43,10 @@ $ doccy test.js test.md
 Will create `test.md` that looks like so:
 
 ```
+## `thing`
+
+_a module of things_
+
 ### `foo`
 
 _a cool function_
@@ -55,6 +66,7 @@ Order is not important.
 - `@description {function description}`
 - `@param {name} {description}`
 - `@returns {description}`
+- `@object {name}` - denotes a "containing" object (see above example, which is much clearer)
 
 ### TODO
 
@@ -63,7 +75,6 @@ Order is not important.
 - add more keys
 - make a Grunt plugin
 - document programmatical usage
-- better support for documenting an object and the methods within
 
 ### Changelog
 
