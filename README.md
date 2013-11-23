@@ -37,10 +37,10 @@ var thing = {
 Running:
 
 ```
-$ doccy test.js test.md
+$ doccy test.js -o docs
 ```
 
-Will create `test.md` that looks like so:
+Will create `docs/test.md` that looks like so:
 
 ```
 ## `thing`
@@ -58,6 +58,20 @@ Parameters:
 **Returns:** a number
 ```
 
+### CLI Globbing
+
+Rather than specify each file individually, the more common use of Doccy's small CLI tool is to pass in a glob:
+
+```
+$ doccy "src/*.js"
+```
+
+Will create a Markdown documentation file for each JS file within the `src` directory. By default doccy will put these into a `docs` folder, that it will create if needed, but you can specify the output directory with the `-o` flag:
+
+```
+$ doccy "src/*.js" -o documentation
+```
+
 ### Supported Keys
 
 Order is not important.
@@ -68,10 +82,10 @@ Order is not important.
 - `@returns {description}`
 - `@object {name}` - denotes a "containing" object (see above example, which is much clearer)
 
+
 ### TODO
 
 - allow options for changing Markdown formatting
-- make CLI tool take a glob or directory, and output a new MD file for each JS file it finds
 - add more keys
 - make a Grunt plugin
 - document programmatical usage
@@ -79,6 +93,12 @@ Order is not important.
 ### Contributors
 Thanks to the following people for their help :)
 - [Jonathan Fielding](http://twitter.com/jonathanfielding).
+
+### Contributing
+
+Please follow the existing style of code - recommend using [EditorConfig](http://editorconfig.org/) to help you out with this.
+
+To generate documentation, run `npm run doccy`.
 
 ### Changelog
 
