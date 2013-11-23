@@ -58,6 +58,8 @@ Parameters:
 **Returns:** a number
 ```
 
+If you'd like a full example, the [Doccy documentation](https://github.com/jackfranklin/doccy/tree/master/docs) is generated from Doccy itself.
+
 ### CLI Globbing
 
 Rather than specify each file individually, the more common use of Doccy's small CLI tool is to pass in a glob:
