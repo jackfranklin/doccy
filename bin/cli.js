@@ -1,7 +1,16 @@
 #!/usr/bin/env node
 var doccy = require("../index.js");
+var program = require("commander");
+var pjson = require('../package.json');
+var filename = output = null;
 
-var filename = process.argv[2];
-var output = process.argv[3] || "docs.md";
+program.version(pjson.version).parse(process.argv);
 
-doccy.init(filename, output);
+filename = program.args[0];
+output = program.args[1] || "docs.md";
+
+if(filename) {
+	doccy.init(filename, output);
+} else {
+	program.help();
+}
