@@ -76,6 +76,10 @@ Order is not important.
 - make a Grunt plugin
 - document programmatical usage
 
+### Contributors
+Thanks to the following people for their help :)
+- [Jonathan Fielding](http://twitter.com/jonathanfielding).
+
 ### Changelog
 
 __0.0.3__
