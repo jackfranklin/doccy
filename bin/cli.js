@@ -10,7 +10,7 @@ filename = program.args[0];
 output = program.args[1] || "docs.md";
 
 if(filename) {
-	doccy.init(filename, output);
+  doccy.init(filename, output);
 } else {
-	program.help();
+  program.help();
 }
