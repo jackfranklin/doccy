@@ -9,9 +9,8 @@ program.version(pjson.version).parse(process.argv);
 filename = program.args[0];
 output = program.args[1] || "docs.md";
 
-if(filename){
+if(filename) {
 	doccy.init(filename, output);
-}
-else{
+} else {
 	program.help();
 }
