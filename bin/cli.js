@@ -1,16 +1,29 @@
 #!/usr/bin/env node
-var doccy = require("../index.js");
+var doccy = require("../doccy.js");
 var program = require("commander");
 var pjson = require('../package.json');
-var filename = output = null;
+var glob = require("glob");
+var mkdirp = require("mkdirp");
 
-program.version(pjson.version).parse(process.argv);
+program.version(pjson.version)
+  .option('-g, --glob [fileGlob]', 'Run Doccy on all files matching [fileGlob]')
+  .option('-o, --output [outputDir]', 'Specify the directory to output documentation to', 'docs')
+  .parse(process.argv);
 
-filename = program.args[0];
-output = program.args[1] || "docs.md";
-
-if(filename) {
-  doccy.init(filename, output);
+if(program.glob) {
+  glob(program.glob, {}, function(err, files) {
+    if(files.length) mkdirp(program.output);
+    files.forEach(function(file) {
+      if(file.indexOf("node_modules") == -1) {
+        doccy.init(file, program.output);
+      }
+    });
+  });
 } else {
-  program.help();
+  var filename = program.args[0];
+  if(filename) {
+    doccy.init(filename, program.output);
+  } else {
+    program.help();
+  }
 }

@@ -8,7 +8,7 @@ Parameters:
 
 - `filename`: the src file to read for docstrings
 
-- `output`: the file name to output markdown into
+- `outputDir`: the folder to output markdown into
 
 ### `writeToFile`
 
@@ -16,4 +16,6 @@ Parameters:
 
 - `markdown`: the result of calling writeMarkdown.parse
 
-- `output`: the filename to output to
+- `outputDir`: the directory to write to
+
+- `outputFile`: the filename to output to

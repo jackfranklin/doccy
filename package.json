@@ -2,7 +2,7 @@
   "name": "doccy",
   "version": "0.0.3",
   "description": "Generate Markdown documentation",
-  "main": "index.js",
+  "main": "doccy.js",
   "directories": {
     "test": "test"
   },
@@ -10,7 +10,8 @@
     "doccy": "bin/cli.js"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "doccy": "doccy -g '*.js' && doccy -g 'src/*.js'"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,9 @@
     "mocha": "~1.14.0"
   },
   "dependencies": {
-    "commander": "~2.1.0"
+    "commander": "~2.1.0",
+    "underscore": "~1.5.2",
+    "glob": "~3.2.7",
+    "mkdirp": "~0.3.5"
   }
 }
