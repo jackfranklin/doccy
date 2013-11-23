@@ -20,7 +20,12 @@ var writeMarkdown = {
         blockMarkdown.push("Parameters:");
         var paramsMarkdown = [];
         for(var name in block.params) {
-          paramsMarkdown.push("- `" + name + "`: " + block.params[name]);
+          var paramString = "- `" + name + "`";
+          if(block.params[name].type) {
+            paramString += " (`" + block.params[name].type + "`)";
+          }
+          paramString += ": " + block.params[name].desc;
+          paramsMarkdown.push(paramString);
         }
         blockMarkdown.push(paramsMarkdown.join("\n\n"));
       }

@@ -41,8 +41,22 @@ describe("Parse File", function() {
       "var foo = function() {}"
     ].join("\n");
     var res = parseFile.parse(contents);
-    assert.equal(res.blocks[0].params.x, "description of x");
-    assert.equal(res.blocks[0].params.y, "description of y");
+    assert.equal(res.blocks[0].params.x.desc, "description of x");
+    assert.equal(res.blocks[0].params.y.desc, "description of y");
+  });
+
+  it("can parse parameters with types", function() {
+    var contents = [
+      "/*",
+      " * @name foo",
+      " * @param x {String} description of x",
+      " * @returns something else",
+      " */",
+      "var foo = function() {}"
+    ].join("\n");
+    var res = parseFile.parse(contents);
+    assert.equal(res.blocks[0].params.x.desc, "description of x");
+    assert.equal(res.blocks[0].params.x.type, "String");
   });
 
   it("can parse object docs", function() {
@@ -79,4 +93,5 @@ describe("Parse File", function() {
     assert.equal(res.blocks[0].name, "foo");
     assert.equal(res.blocks[1].name, "bar");
   });
+
 });
