@@ -6,9 +6,9 @@ _the doccy module_
 
 Parameters:
 
-- `filename`: the src file to read for docstrings
+- `filename` (`String`): the src file to read for docstrings
 
-- `outputDir`: the folder to output markdown into
+- `outputDir` (`String`): the folder to output markdown into
 
 ### `writeToFile`
 
@@ -16,6 +16,6 @@ Parameters:
 
 - `markdown`: the result of calling writeMarkdown.parse
 
-- `outputDir`: the directory to write to
+- `outputDir` (`String`): the directory to write to
 
-- `outputFile`: the filename to output to
+- `outputFile` (`String`): the filename to output to

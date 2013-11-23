@@ -76,13 +76,13 @@ $ doccy "src/*.js" -o documentation
 
 ### Supported Keys
 
-Order is not important.
+Order is not important, and things within `[]` are optional.
 
-- `@name {function name}`
-- `@description {function description}`
-- `@param {name} {description}`
-- `@returns {description}`
-- `@object {name}` - denotes a "containing" object (see above example, which is much clearer)
+- `@name function_name`
+- `@description function_description`
+- `@param name [{Type}] description`
+- `@returns description`
+- `@object name` - denotes a "containing" object (see above example, which is much clearer)
 
 
 ### TODO
@@ -103,6 +103,12 @@ Please follow the existing style of code - recommend using [EditorConfig](http:/
 To generate documentation, run `npm run doccy`.
 
 ### Changelog
+
+__0.0.5__
+- added type support to `@param`
+
+__0.0.4__
+- added CLI tool for globbing support
 
 __0.0.3__
 - added `object` key for denoting a "containing" object

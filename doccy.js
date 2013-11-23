@@ -11,8 +11,8 @@ var _ = require("underscore");
 var doccy = {
   /*
    * @name init
-   * @param filename the src file to read for docstrings
-   * @param outputDir the folder to output markdown into
+   * @param filename {String} the src file to read for docstrings
+   * @param outputDir {String} the folder to output markdown into
    */
   init: function(filename, outputDir) {
     fs.readFile(filename, "utf8", function(err, contents) {
@@ -27,8 +27,8 @@ var doccy = {
   /*
    * @name writeToFile
    * @param markdown the result of calling writeMarkdown.parse
-   * @param outputDir the directory to write to
-   * @param outputFile the filename to output to
+   * @param outputDir {String} the directory to write to
+   * @param outputFile {String} the filename to output to
    */
   writeToFile: function(markdown, outputDir, outputFile) {
     var toWrite = [];
