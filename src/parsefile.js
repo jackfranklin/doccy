@@ -21,7 +21,7 @@ FunctionBlock.prototype = {
     return false;
   },
   checkNameMatch: function(line) {
-    var match = /@name ([A-z0-9_]*)/i.exec(line);
+    var match = /@name ([A-z0-9_.]*)/i.exec(line);
     if(match) {
       this.name = match[1];
       return true;
@@ -37,9 +37,9 @@ FunctionBlock.prototype = {
     return false;
   },
   checkParamsMatch: function(line) {
-    var match = /@param ([A-z0-9_]*) (.+)/i.exec(line);
+    var match = /@param ([A-z0-9_:]*) (.+)/i.exec(line);
     if(match) {
-      this.params[match[1]] = match[2];
+      this.params[match[1].replace(":","")] = match[2];
       return true;
     }
     return false;
