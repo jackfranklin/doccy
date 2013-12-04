@@ -4,6 +4,11 @@ var program = require("commander");
 var pjson = require('../package.json');
 var glob = require("glob");
 var mkdirp = require("mkdirp");
+var notifier = require('update-notifier');
+
+if (notifier.update) {
+    notifier.notify('Update available: ' + notifier.update.latest);
+}
 
 program.version(pjson.version)
   .option('-g, --glob [fileGlob]', 'Run Doccy on all files matching [fileGlob]')
